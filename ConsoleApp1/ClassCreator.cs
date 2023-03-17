@@ -46,14 +46,28 @@ namespace ConsoleApp1
         public static Группа Группа()
         {
             Console.WriteLine("Введите название: ");
-            string Название = Console.ReadLine();
+            string название = Console.ReadLine();
             Console.WriteLine("Введите сокращение: ");
-            string Сокращение = Console.ReadLine();
-            Console.WriteLine("Введите численность: ");
-            string Численность = Console.ReadLine();
-            Console.WriteLine("Введите год поступления: ");
-            string Год_поступления = Console.ReadLine();
-            return new Группа(Название, Сокращение, Численность, Год_поступления, Специальность(), Сотрудник());
+            string сокращение = Console.ReadLine();
+            int численность;
+            int годПоступления;
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Введите численность: ");
+                    численность = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Введите год поступления: ");
+                    годПоступления = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch
+                {
+                    Console.WriteLine("Числа!");                   
+                }                
+                                            
+            }                    
+            return new Группа(название, сокращение, численность, годПоступления, Специальность(), Сотрудник());
         }
         public static Дисциплина Дисциплина()
         {
