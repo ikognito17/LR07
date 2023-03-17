@@ -18,15 +18,19 @@ namespace ConsoleApp1
             Print(занятие.Группа);
             Print(занятие.Пара);
             Print(занятие.ВидЗанятия);
-            
+
         }
         public static void Print(Аудитория аудитория)
         {
             Console.WriteLine($"аудитория.Название = {аудитория.Название}");
             Print(аудитория.Сотрудник);
-            Console.WriteLine($"аудитория.количество_посадочных_мест = {аудитория.Количество_посадочных_мест}");
-            Console.WriteLine($"аудитория.количество_окон = {аудитория.Количество_окон}");
-            Print(аудитория.Оборудование);
+            Console.WriteLine($"аудитория.количествоПосадочных_мест = {аудитория.КоличествоПосадочныхМест}");
+            Console.WriteLine($"аудитория.количествоОкон = {аудитория.КоличествоОкон}");
+
+            foreach(Оборудование i in аудитория.СписокОборудования)
+            {
+                Print(i);
+            }
         }
         public static void Print(ВидЗанятия видЗанятия)
         {
@@ -36,7 +40,7 @@ namespace ConsoleApp1
             Console.WriteLine($"группа.Название = {группа.Название}");
             Console.WriteLine($"группа.Сокращение = {группа.Сокращение}");
             Console.WriteLine($"группа.Численность = {группа.Численность}");
-            Console.WriteLine($"группа.Год_поступления = { группа.Год_поступления}");
+            Console.WriteLine($"группа.Год_поступления = {группа.Год_поступления}");
             Print(группа.Специальность);
             Print(группа.Классный_руководитель);
         }
@@ -47,10 +51,19 @@ namespace ConsoleApp1
         }
         public static void Print(Пара пара)
         {
+            Console.WriteLine($"пара.BeginPara = {пара.BeginPara}");
+            Console.WriteLine($"пара.EndPara = {пара.EndPara}");
+            Console.WriteLine($"пара.BeginBreak = {пара.BeginBreak}");
+            Console.WriteLine($"пара.EndBreak = {пара.EndBreak}");
+            Print(пара.Cмена);
+        }
+        public static void Print(Смена смена)
+        {
+
         }
         public static void Print(Сотрудник сотрудник)
         {
-            Console.WriteLine($"сотрудник.Фамилия = {сотрудник.Фамилия}"); 
+            Console.WriteLine($"сотрудник.Фамилия = {сотрудник.Фамилия}");
             Console.WriteLine($"сотрудник.Имя = {сотрудник.Имя}");
             Console.WriteLine($"сотрудник.Отчество = {сотрудник.Отчество}");
             Print(сотрудник.Должность);

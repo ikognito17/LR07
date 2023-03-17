@@ -9,6 +9,15 @@ namespace ConsoleApp1
 {
     static class ClassCreator
     {
+        //public static ClassAA ClassAA()
+        //{
+        //    Console.WriteLine("Имя");
+        //    string name = Console.ReadLine();
+        //    Console.WriteLine("Второе Имя");
+        //    string lastname = Console.ReadLine();
+        //    return new ClassAA(name, lastname);
+        //}
+
         public static Занятие Занятие()
         {
             Console.WriteLine($"Введите текущую дату: ");
@@ -21,15 +30,17 @@ namespace ConsoleApp1
                 try
                 {
                     Console.Write("Введите название: ");
-                    string Название = Console.ReadLine();
+                    string название = Console.ReadLine();
 
                     Console.Write("Введите количесвто посадочных мест: ");
-                    uint Количесвто_посадочных_мест = uint.Parse(Console.ReadLine());
+                    uint количесвтоПосадочныхМест = uint.Parse(Console.ReadLine());
 
                     Console.Write("Введите количесвто окон: ");
-                    uint Количесвто_окон = uint.Parse(Console.ReadLine());
+                    uint количесвтоОкон = uint.Parse(Console.ReadLine());
 
-                    return new Аудитория(Название, Сотрудник(), Количесвто_посадочных_мест, Количесвто_окон, Оборудование());
+                    List<Оборудование> списокОборудования = new List<Оборудование>();
+
+                    return new Аудитория(название, Сотрудник(), количесвтоПосадочныхМест, количесвтоОкон, списокОборудования);
                 }
                 catch (Exception)
                 {
@@ -64,7 +75,19 @@ namespace ConsoleApp1
         }
         public static Пара Пара()
         {
-            return new Пара();
+            Console.Write("Введите начало пары: ");
+            string BeginPara = Console.ReadLine();
+            Console.Write("Введите конец пары: ");
+            string EndPara = Console.ReadLine();
+            Console.Write("Введите начало перемены: ");
+            string BeginBreak = Console.ReadLine();
+            Console.Write("Введите конец перемены: ");
+            string EndBreak = Console.ReadLine();
+            return new Пара(BeginPara, EndPara, BeginBreak, EndBreak, смена());
+        }
+        public static Смена смена()
+        {
+            return new Смена();
         }
         public static Должность Должность()
         {
@@ -78,7 +101,7 @@ namespace ConsoleApp1
             string Имя = Console.ReadLine();
             Console.WriteLine("Введите Отчество: ");
             string Отчество = Console.ReadLine();
-            return new Сотрудник(Фамилия,Имя,Отчество,Должность());
+            return new Сотрудник(Фамилия, Имя, Отчество, Должность());
         }
         public static Оборудование Оборудование()
         {

@@ -15,12 +15,13 @@ namespace ConsoleApp1
                 Console.Write("Введите название класса: ");
                 switch (Console.ReadLine())
                 {
-                    case "Сотрудник":UI.Print(ClassCreator.Сотрудник()); break;
+                    case "Сотрудник": UI.Print(ClassCreator.Сотрудник()); break;
                     case "Занятие": UI.Print(ClassCreator.Занятие()); break;
                     case "Аудитория": UI.Print(ClassCreator.Аудитория()); break;
                     case "Дисциплина": UI.Print(ClassCreator.Дисциплина()); break;
                     case "Группа": UI.Print(ClassCreator.Группа()); break;
                     case "Специальность": UI.Print(ClassCreator.Специальность()); break;
+                    case "Пара": UI.Print(ClassCreator.Пара()); break;
                     default: Console.WriteLine("Такой класс не реализован"); break;
                 }
 
