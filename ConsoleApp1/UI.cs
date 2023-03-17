@@ -18,7 +18,7 @@ namespace ConsoleApp1
             Print(занятие.Группа);
             Print(занятие.Пара);
             Print(занятие.ВидЗанятия);
-            
+
         }
         public static void Print(Аудитория аудитория)
         {
@@ -40,7 +40,7 @@ namespace ConsoleApp1
             Console.WriteLine($"группа.Название = {группа.Название}");
             Console.WriteLine($"группа.Сокращение = {группа.Сокращение}");
             Console.WriteLine($"группа.Численность = {группа.Численность}");
-            Console.WriteLine($"группа.Год_поступления = { группа.Год_поступления}");
+            Console.WriteLine($"группа.Год_поступления = {группа.Год_поступления}");
             Print(группа.Специальность);
             Print(группа.Классный_руководитель);
         }
@@ -51,10 +51,19 @@ namespace ConsoleApp1
         }
         public static void Print(Пара пара)
         {
+            Console.WriteLine($"пара.BeginPara = {пара.BeginPara}");
+            Console.WriteLine($"пара.EndPara = {пара.EndPara}");
+            Console.WriteLine($"пара.BeginBreak = {пара.BeginBreak}");
+            Console.WriteLine($"пара.EndBreak = {пара.EndBreak}");
+            Print(пара.Cмена);
+        }
+        public static void Print(Смена смена)
+        {
+
         }
         public static void Print(Сотрудник сотрудник)
         {
-            Console.WriteLine($"сотрудник.Фамилия = {сотрудник.Фамилия}"); 
+            Console.WriteLine($"сотрудник.Фамилия = {сотрудник.Фамилия}");
             Console.WriteLine($"сотрудник.Имя = {сотрудник.Имя}");
             Console.WriteLine($"сотрудник.Отчество = {сотрудник.Отчество}");
             Print(сотрудник.Должность);
