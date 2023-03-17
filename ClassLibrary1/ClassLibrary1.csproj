@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ClassLibrary1</RootNamespace>
     <AssemblyName>ClassLibrary1</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -50,6 +50,7 @@
     <Compile Include="Занятие.cs" />
     <Compile Include="Оборудование.cs" />
     <Compile Include="Пара.cs" />
+    <Compile Include="Смена.cs" />
     <Compile Include="Сотрудник.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Специальность.cs" />
