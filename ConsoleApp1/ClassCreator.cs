@@ -21,15 +21,17 @@ namespace ConsoleApp1
                 try
                 {
                     Console.Write("Введите название: ");
-                    string Название = Console.ReadLine();
+                    string название = Console.ReadLine();
 
                     Console.Write("Введите количесвто посадочных мест: ");
-                    uint Количесвто_посадочных_мест = uint.Parse(Console.ReadLine());
+                    uint количесвтоПосадочныхМест = uint.Parse(Console.ReadLine());
 
                     Console.Write("Введите количесвто окон: ");
-                    uint Количесвто_окон = uint.Parse(Console.ReadLine());
+                    uint количесвтоОкон = uint.Parse(Console.ReadLine());
 
-                    return new Аудитория(Название, Сотрудник(), Количесвто_посадочных_мест, Количесвто_окон, Оборудование());
+                    List<Оборудование> списокОборудования = new List<Оборудование>();
+
+                    return new Аудитория(название, Сотрудник(), количесвтоПосадочныхМест, количесвтоОкон, списокОборудования);
                 }
                 catch (Exception)
                 {
