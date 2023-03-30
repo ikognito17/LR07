@@ -9,6 +9,14 @@ namespace ConsoleApp1
 {
     static class ClassCreator
     {
+        //public static ClassAA ClassAA()
+        //{
+        //    Console.WriteLine("Имя");
+        //    string name = Console.ReadLine();
+        //    Console.WriteLine("Второе Имя");
+        //    string lastname = Console.ReadLine();
+        //    return new ClassAA(name, lastname);
+        //}
 
         public static Занятие Занятие()
         {
@@ -113,16 +121,7 @@ namespace ConsoleApp1
         }
         public static Должность Должность()
         {
-            Console.Write("Введите название: ");
-            string Название = Console.ReadLine();
-            Console.Write("Введите оклад: ");
-            string Оклад = Console.ReadLine();
-            return new Должность(Название, Оклад, Подразделение());
-        }
-
-        public static Подразделение Подразделение()
-        {
-            return new Подразделение();
+            return new Должность();
         }
         public static Сотрудник Сотрудник()
         {

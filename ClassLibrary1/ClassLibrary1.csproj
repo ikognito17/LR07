@@ -50,7 +50,6 @@
     <Compile Include="Занятие.cs" />
     <Compile Include="Оборудование.cs" />
     <Compile Include="Пара.cs" />
-    <Compile Include="Подразделение.cs" />
     <Compile Include="Смена.cs" />
     <Compile Include="Сотрудник.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
