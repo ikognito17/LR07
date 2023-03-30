@@ -35,6 +35,16 @@ namespace ConsoleApp1
         public static void Print(ВидЗанятия видЗанятия)
         {
         }
+
+        public static void Print(Должность должность)
+        {
+            Console.WriteLine($"должность.Имя = {должность.Название}");
+            Console.WriteLine($"должность.Оклад = {должность.Оклад}");
+            Print(должность.Подразделение);
+        }
+        public static void Print(Подразделение подразделение)
+        {
+        }
         public static void Print(Группа группа)
         {
             Console.WriteLine($"группа.Название = {группа.Название}");
@@ -68,9 +78,7 @@ namespace ConsoleApp1
             Console.WriteLine($"сотрудник.Отчество = {сотрудник.Отчество}");
             Print(сотрудник.Должность);
         }
-        public static void Print(Должность должность)
-        {
-        }
+        
         public static void Print(Оборудование оборудование)
         {
         }
