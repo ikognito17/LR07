@@ -9,14 +9,7 @@ namespace ConsoleApp1
 {
     static class ClassCreator
     {
-        //public static ClassAA ClassAA()
-        //{
-        //    Console.WriteLine("Имя");
-        //    string name = Console.ReadLine();
-        //    Console.WriteLine("Второе Имя");
-        //    string lastname = Console.ReadLine();
-        //    return new ClassAA(name, lastname);
-        //}
+        
 
         public static Занятие Занятие()
         {
@@ -55,14 +48,28 @@ namespace ConsoleApp1
         public static Группа Группа()
         {
             Console.WriteLine("Введите название: ");
-            string Название = Console.ReadLine();
+            string название = Console.ReadLine();
             Console.WriteLine("Введите сокращение: ");
-            string Сокращение = Console.ReadLine();
-            Console.WriteLine("Введите численность: ");
-            string Численность = Console.ReadLine();
-            Console.WriteLine("Введите год поступления: ");
-            string Год_поступления = Console.ReadLine();
-            return new Группа(Название, Сокращение, Численность, Год_поступления, Специальность(), Сотрудник());
+            string сокращение = Console.ReadLine();
+            int численность;
+            int годПоступления;
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Введите численность: ");
+                    численность = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Введите год поступления: ");
+                    годПоступления = Convert.ToInt32(Console.ReadLine());
+                    break;
+                }
+                catch
+                {
+                    Console.WriteLine("Числа!");                   
+                }                
+                                            
+            }                    
+            return new Группа(название, сокращение, численность, годПоступления, Специальность(), Сотрудник());
         }
         public static Дисциплина Дисциплина()
         {
@@ -75,33 +82,57 @@ namespace ConsoleApp1
         }
         public static Пара Пара()
         {
-            Console.Write("Введите начало пары: ");
-            string BeginPara = Console.ReadLine();
-            Console.Write("Введите конец пары: ");
-            string EndPara = Console.ReadLine();
-            Console.Write("Введите начало перемены: ");
-            string BeginBreak = Console.ReadLine();
-            Console.Write("Введите конец перемены: ");
-            string EndBreak = Console.ReadLine();
-            return new Пара(BeginPara, EndPara, BeginBreak, EndBreak, смена());
+            Console.WriteLine("Введите начало пары. ");
+            Console.Write("Часы: ");
+            int hour = int.Parse(Console.ReadLine());
+            Console.Write("Минуты: ");
+            int minute = int.Parse(Console.ReadLine());
+            DateTime BeginPara = new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day,hour,minute,default);
+            Console.WriteLine("Введите конец пары: ");
+            Console.Write("Часы: ");
+            hour = int.Parse(Console.ReadLine());
+            Console.Write("Минуты: ");
+            minute = int.Parse(Console.ReadLine());
+            DateTime EndPara = new DateTime(DateTime.Now.Year, DateTime.Now.Month,DateTime.Now.Day, hour, minute, default);
+            Console.WriteLine("Введите начало перемены: ");
+            Console.Write("Часы: ");
+            hour = int.Parse(Console.ReadLine());
+            Console.Write("Минуты: ");
+            minute = int.Parse(Console.ReadLine());
+            DateTime BeginBreak = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, minute, default);
+            Console.WriteLine("Введите конец перемены: ");
+            Console.Write("Часы: ");
+            hour = int.Parse(Console.ReadLine());
+            Console.Write("Минуты: ");
+            minute = int.Parse(Console.ReadLine());
+            DateTime EndBreak = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, minute, default);
+            return new Пара(BeginPara, EndPara, BeginBreak, EndBreak, Смена());
         }
-        public static Смена смена()
+        public static Смена Смена()
         {
             return new Смена();
         }
         public static Должность Должность()
         {
-            return new Должность();
+            Console.Write("Введите название: ");
+            string Название = Console.ReadLine();
+            Console.Write("Введите оклад: ");
+            string Оклад = Console.ReadLine();
+            return new Должность(Название, Оклад, Подразделение());
+        }
+        public static Подразделение Подразделение()
+        {
+            return new Подразделение();
         }
         public static Сотрудник Сотрудник()
         {
             Console.WriteLine("Введите Фамилию: ");
-            string Фамилия = Console.ReadLine();
+            string фамилия = Console.ReadLine();
             Console.WriteLine("Введите Имя: ");
-            string Имя = Console.ReadLine();
+            string имя = Console.ReadLine();
             Console.WriteLine("Введите Отчество: ");
-            string Отчество = Console.ReadLine();
-            return new Сотрудник(Фамилия, Имя, Отчество, Должность());
+            string отчество = Console.ReadLine();
+            return new Сотрудник(фамилия, имя, отчество, Должность());
         }
         public static Оборудование Оборудование()
         {
