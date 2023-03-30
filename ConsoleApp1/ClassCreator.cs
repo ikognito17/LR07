@@ -96,12 +96,12 @@ namespace ConsoleApp1
         public static Сотрудник Сотрудник()
         {
             Console.WriteLine("Введите Фамилию: ");
-            string Фамилия = Console.ReadLine();
+            string фамилия = Console.ReadLine();
             Console.WriteLine("Введите Имя: ");
-            string Имя = Console.ReadLine();
+            string имя = Console.ReadLine();
             Console.WriteLine("Введите Отчество: ");
-            string Отчество = Console.ReadLine();
-            return new Сотрудник(Фамилия, Имя, Отчество, Должность());
+            string отчество = Console.ReadLine();
+            return new Сотрудник(фамилия, имя, отчество, Должность());
         }
         public static Оборудование Оборудование()
         {
