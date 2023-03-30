@@ -89,17 +89,33 @@ namespace ConsoleApp1
         }
         public static Пара Пара()
         {
-            Console.Write("Введите начало пары: ");
-            string BeginPara = Console.ReadLine();
-            Console.Write("Введите конец пары: ");
-            string EndPara = Console.ReadLine();
-            Console.Write("Введите начало перемены: ");
-            string BeginBreak = Console.ReadLine();
-            Console.Write("Введите конец перемены: ");
-            string EndBreak = Console.ReadLine();
-            return new Пара(BeginPara, EndPara, BeginBreak, EndBreak, смена());
+            Console.WriteLine("Введите начало пары. ");
+            Console.Write("Часы: ");
+            int hour = int.Parse(Console.ReadLine());
+            Console.Write("Минуты: ");
+            int minute = int.Parse(Console.ReadLine());
+            DateTime BeginPara = new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day,hour,minute,default);
+            Console.WriteLine("Введите конец пары: ");
+            Console.Write("Часы: ");
+            hour = int.Parse(Console.ReadLine());
+            Console.Write("Минуты: ");
+            minute = int.Parse(Console.ReadLine());
+            DateTime EndPara = new DateTime(DateTime.Now.Year, DateTime.Now.Month,DateTime.Now.Day, hour, minute, default);
+            Console.WriteLine("Введите начало перемены: ");
+            Console.Write("Часы: ");
+            hour = int.Parse(Console.ReadLine());
+            Console.Write("Минуты: ");
+            minute = int.Parse(Console.ReadLine());
+            DateTime BeginBreak = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, minute, default);
+            Console.WriteLine("Введите конец перемены: ");
+            Console.Write("Часы: ");
+            hour = int.Parse(Console.ReadLine());
+            Console.Write("Минуты: ");
+            minute = int.Parse(Console.ReadLine());
+            DateTime EndBreak = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, minute, default);
+            return new Пара(BeginPara, EndPara, BeginBreak, EndBreak, Смена());
         }
-        public static Смена смена()
+        public static Смена Смена()
         {
             return new Смена();
         }

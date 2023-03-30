@@ -55,7 +55,7 @@ namespace ConsoleApp1
             Console.WriteLine($"пара.EndPara = {пара.EndPara}");
             Console.WriteLine($"пара.BeginBreak = {пара.BeginBreak}");
             Console.WriteLine($"пара.EndBreak = {пара.EndBreak}");
-            Print(пара.Cмена);
+            Print(пара.НоваяCмена);
         }
         public static void Print(Смена смена)
         {
