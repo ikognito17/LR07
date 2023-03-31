@@ -82,31 +82,42 @@ namespace ConsoleApp1
         }
         public static Пара Пара()
         {
-            Console.WriteLine("Введите начало пары. ");
-            Console.Write("Часы: ");
-            int hour = int.Parse(Console.ReadLine());
-            Console.Write("Минуты: ");
-            int minute = int.Parse(Console.ReadLine());
-            DateTime BeginPara = new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day,hour,minute,default);
-            Console.WriteLine("Введите конец пары: ");
-            Console.Write("Часы: ");
-            hour = int.Parse(Console.ReadLine());
-            Console.Write("Минуты: ");
-            minute = int.Parse(Console.ReadLine());
-            DateTime EndPara = new DateTime(DateTime.Now.Year, DateTime.Now.Month,DateTime.Now.Day, hour, minute, default);
-            Console.WriteLine("Введите начало перемены: ");
-            Console.Write("Часы: ");
-            hour = int.Parse(Console.ReadLine());
-            Console.Write("Минуты: ");
-            minute = int.Parse(Console.ReadLine());
-            DateTime BeginBreak = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, minute, default);
-            Console.WriteLine("Введите конец перемены: ");
-            Console.Write("Часы: ");
-            hour = int.Parse(Console.ReadLine());
-            Console.Write("Минуты: ");
-            minute = int.Parse(Console.ReadLine());
-            DateTime EndBreak = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, minute, default);
-            return new Пара(BeginPara, EndPara, BeginBreak, EndBreak, Смена());
+            try
+            {
+                Console.WriteLine("Введите начало пары. ");
+                string timePara = Console.ReadLine();
+                TimeSpan startPara = DateTime.Parse(timePara).TimeOfDay;
+                //int hour = int.Parse(Console.ReadLine());
+                //Console.Write("Минуты: ");
+                //int minute = int.Parse(Console.ReadLine());
+                //DateTime BeginPara = new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day,hour,minute,default);
+                Console.WriteLine("Введите конец пары: ");
+                timePara = Console.ReadLine();
+                TimeSpan endPara = DateTime.Parse(timePara).TimeOfDay;
+                //Console.Write("Часы: ");
+                //hour = int.Parse(Console.ReadLine());
+                //Console.Write("Минуты: ");
+                //minute = int.Parse(Console.ReadLine());
+                //DateTime EndPara = new DateTime(DateTime.Now.Year, DateTime.Now.Month,DateTime.Now.Day, hour, minute, default);
+                Console.WriteLine("Введите начало перемены: ");
+                timePara = Console.ReadLine();
+                TimeSpan startBreak = DateTime.Parse(timePara).TimeOfDay;
+                //Console.Write("Часы: ");
+                //hour = int.Parse(Console.ReadLine());
+                //Console.Write("Минуты: ");
+                //minute = int.Parse(Console.ReadLine());
+                //DateTime BeginBreak = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, minute, default);
+                Console.WriteLine("Введите конец перемены: ");
+                timePara = Console.ReadLine();
+                TimeSpan endBreak = DateTime.Parse(timePara).TimeOfDay;
+                //Console.Write("Часы: ");
+                //hour = int.Parse(Console.ReadLine());
+                //Console.Write("Минуты: ");
+                //minute = int.Parse(Console.ReadLine());
+                //DateTime EndBreak = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, minute, default);
+                return new Пара(startPara, endPara, startBreak, endBreak, Смена());
+            }
+            catch (Exception) { return Пара(); }
         }
         public static Смена Смена()
         {
