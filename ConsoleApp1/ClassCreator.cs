@@ -106,7 +106,9 @@ namespace ConsoleApp1
         }
         public static Смена Смена()
         {
-            return new Смена();
+            Console.WriteLine("Введите название смены");
+            string name = Console.ReadLine();
+            return new Смена(name);
         }
         public static Должность Должность()
         {
