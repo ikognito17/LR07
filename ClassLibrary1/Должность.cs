@@ -9,11 +9,11 @@ namespace ClassLibrary1
     public class Должность
     {
         public string Название { get; }
-        public string Оклад { get; }
+        public decimal Оклад { get; }
         public Подразделение Подразделение { get; }
 
 
-        public Должность(string название, string оклад, Подразделение подразделение)
+        public Должность(string название, decimal оклад, Подразделение подразделение)
         {
             this.Название = название;
             this.Оклад = оклад;
