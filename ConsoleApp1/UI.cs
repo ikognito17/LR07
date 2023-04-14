@@ -69,7 +69,7 @@ namespace ConsoleApp1
         }
         public static void Print(Смена смена)
         {
-
+            Console.WriteLine($"смена.Name = {смена.Name}");
         }
         public static void Print(Сотрудник сотрудник)
         {
@@ -87,7 +87,14 @@ namespace ConsoleApp1
             Console.WriteLine($"специальность.Название = {специальность.Название}");
             Console.WriteLine($"специальность.Сокращение = {специальность.Сокращение}");
         }
-
+        public static void Print(Студент студент)
+        {
+            Console.WriteLine($"студент.Фамилия = {студент.Фамилия}");
+            Console.WriteLine($"студент.Имя = {студент.Имя}");
+            Console.WriteLine($"студент.Отчество = {студент.Отчество}");
+            Console.WriteLine($"студент.Дата_рождения = {студент.ДатаРождения}");
+            Print(студент.Группа);
+        }
 
     }
 }
