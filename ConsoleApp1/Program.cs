@@ -24,6 +24,7 @@ namespace ConsoleApp1
                     case "Пара": UI.Print(ClassCreator.Пара()); break;
                     case "Должность": UI.Print(ClassCreator.Должность()); break;
                     case "Студент": UI.Print(ClassCreator.Студент()); break;
+                    case "Смена": UI.Print(ClassCreator.Смена()); break;
                     default: Console.WriteLine("Такой класс не реализован"); break;
                 }
 
