@@ -99,7 +99,6 @@ namespace ConsoleApp1
                 Console.WriteLine("Введите конец перемены: ");
                 timePara = Console.ReadLine();
                 TimeSpan endBreak = DateTime.Parse(timePara).TimeOfDay;
-                
                 return new Пара(startPara, endPara, startBreak, endBreak, Смена());
             }
             catch (Exception) { return Пара(); }
