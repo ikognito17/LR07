@@ -114,7 +114,7 @@ namespace ConsoleApp1
             Console.Write("Введите название: ");
             string Название = Console.ReadLine();
             Console.Write("Введите оклад: ");
-            string Оклад = Console.ReadLine();
+            decimal Оклад =Convert.ToDecimal( Console.ReadLine());
             return new Должность(Название, Оклад, Подразделение());
         }
         public static Подразделение Подразделение()
