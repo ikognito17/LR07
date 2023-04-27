@@ -92,7 +92,7 @@ namespace ConsoleApp1
             Console.WriteLine($"студент.Фамилия = {студент.Фамилия}");
             Console.WriteLine($"студент.Имя = {студент.Имя}");
             Console.WriteLine($"студент.Отчество = {студент.Отчество}");
-            Console.WriteLine($"студент.Дата_рождения = {студент.ДатаРождения}");
+            Console.WriteLine($"студент.Дата_рождения = {студент.ДатаРождения.ToShortDateString()}");
             Print(студент.Группа);
         }
 
