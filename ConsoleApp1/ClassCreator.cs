@@ -143,59 +143,25 @@ namespace ConsoleApp1
             string Сокращение = Console.ReadLine();
             return new Специальность(Название, Сокращение);
         }
+
         public static Студент Студент()
         {
-
+            Console.WriteLine("Введите фамилию: ");
+            string фамилия = Console.ReadLine();
+            Console.WriteLine("Введите имя: ");
+            string имя = Console.ReadLine();
+            Console.WriteLine("Введите отчество: ");
+            string отчество = Console.ReadLine();
+            Console.WriteLine("Введите дату рождения формата dd.mm.yyyy: ");
+            if (DateTime.TryParse(Console.ReadLine(), out DateTime датаРождения))
             {
-                Console.WriteLine("Введите фамилию: ");
-                string Фамилия = Console.ReadLine();
-                Console.WriteLine("Введите имя: ");
-                string Имя = Console.ReadLine();
-                Console.WriteLine("Введите отчество: ");
-                string Отчество = Console.ReadLine();
-                Console.WriteLine("Введите дату рождения формата dd.mm.yyyy: ");
-                string ДатаРождения = Console.ReadLine();
-                while (Фамилия == string.Empty || Имя == string.Empty || Отчество == string.Empty)
-                {
-                    Console.WriteLine("Параметры должны быть введены");
-                    return Студент();
-                }
-
-
-                if (ДатаРождения == string.Empty)
-                {
-
-                    Console.WriteLine("Дата рождения не введена, установлена сегодняшняя дата");
-                    ДатаРождения = DateTime.Today.ToString();
-                    Console.WriteLine(Фамилия + " " + Имя + " " + Отчество + " " + ДатаРождения);
-                    return new Студент(Фамилия, Имя, Отчество, Группа(), ДатаРождения);
-
-                }
-
-                string[] split = ДатаРождения.Split('.');
-                string day = split[0];
-                string month = split[1];
-                string year = split[2];
-                int day2 = Convert.ToInt32(day);
-                int month2 = Convert.ToInt32(month);
-                int year2 = Convert.ToInt32(year);
-                while ((year2 < 1 || year2 > 2023) || (month2 < 1 || month2 > 12) || (day2 < 1 || day2 > 31) || (day2 > 28 && month2 == 2))
-                {
-                    Console.WriteLine("Введите дату правильно");
-                    return Студент();
-                }
-
-
-                if ((year2 > 0 && year2 < 2024) && (month2 > 0 && month2 < 13) && (day2 > 0 && day2 < 32) && (day2 < 29 && month2 == 2))
-                {
-                    ДатаРождения = day2.ToString() + "." + month2.ToString() + "." + year2.ToString();
-
-                }
-
-                Console.WriteLine(Фамилия + " " + Имя + " " + Отчество + " " + ДатаРождения);
-                return new Студент(Фамилия, Имя, Отчество, Группа(), ДатаРождения);
+                return new Студент(фамилия, имя, отчество, Группа(), датаРождения);
             }
-
+            else
+            {
+                return new Студент(фамилия, имя, отчество, Группа());
+            }
         }
+       
     }
 }
