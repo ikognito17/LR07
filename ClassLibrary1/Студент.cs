@@ -12,8 +12,13 @@ namespace ClassLibrary1
         public string Имя { get; }
         public string Отчество { get; }
         public Группа Группа { get; }
-        public string ДатаРождения { get; }
-        public Студент(string фамилия, string имя, string отчество, Группа группа, string датаРождения)
+        public DateTime ДатаРождения { get; }
+        public Студент(string фамилия, string имя, string отчество, Группа группа)
+        : this(фамилия, имя, отчество, группа, DateTime.Today)
+        {
+
+        }
+        public Студент(string фамилия, string имя, string отчество, Группа группа, DateTime датаРождения)
         {
             Фамилия = фамилия;
             Имя = имя;
